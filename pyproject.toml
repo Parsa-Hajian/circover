@@ -1,0 +1,24 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "circover"
+version = "0.3.0"
+description = "Geometry-preserving seed selection with Bhattacharyya Coefficient, circular oversampling (GVM-CO, LRE-CO, LS-CO), and degradation-recovery benchmark"
+authors = [{name = "Parsa Hajiannejad"}]
+license = {text = "MIT"}
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+    "numpy>=1.24",
+    "scikit-learn>=1.2",
+    "scipy>=1.10",
+    "imbalanced-learn>=0.11",
+]
+
+[project.optional-dependencies]
+dev = ["pytest", "pytest-cov"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/circover"]
